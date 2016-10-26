@@ -16,6 +16,10 @@ class UserCommandController extends CommandController
      */
     protected $userCommandHandler;
 
+    /**
+     * @param string $userId
+     * @return void
+     */
     public function makeAdminCommand(string $userId)
     {
         $command = new MakeUserAdministrator($userId);
