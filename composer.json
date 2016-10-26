@@ -1,0 +1,13 @@
+{
+    "name": "wwwision/users",
+    "type": "typo3-flow-package",
+    "description": "Simple (and WIP) package demonstrating/testing features of the Neos.Cqrs package",
+    "require": {
+        "neos/cqrs": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wwwision\\Users\\": "Classes"
+        }
+    }
+}

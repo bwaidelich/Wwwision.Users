@@ -1,0 +1,29 @@
+-
+  name: 'Authentication'
+  uriPattern: '<AuthenticationSubroutes>'
+  defaults:
+    '@package':    'Wwwision.Users'
+    '@subpackage': 'Application'
+    '@controller': 'Authentication'
+    '@action':     'login'
+    '@format':     'html'
+  httpMethods: [GET]
+  subRoutes:
+    'AuthenticationSubroutes':
+      package: 'Wwwision.Users'
+      suffix: 'Authentication'
+
+-
+  name: 'User'
+  uriPattern: 'users/<UserSubroutes>'
+  defaults:
+    '@package':    'Wwwision.Users'
+    '@subpackage': 'Application'
+    '@controller': 'User'
+    '@action':     'index'
+    '@format':     'html'
+  httpMethods: [GET]
+  subRoutes:
+    'UserSubroutes':
+      package: 'Wwwision.Users'
+      suffix: 'User'

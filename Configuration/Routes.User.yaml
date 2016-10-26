@@ -1,0 +1,23 @@
+-
+  name: 'index'
+  uriPattern: ''
+
+-
+  name: 'signup'
+  uriPattern: ''
+  defaults:
+    '@action':     'signUp'
+  httpMethods: [POST]
+
+-
+  name: 'single view'
+  uriPattern: '{user}'
+  defaults:
+    '@action':     'show'
+
+-
+  name: 'rename'
+  uriPattern: '{user}/rename'
+  defaults:
+    '@action':     'rename'
+  httpMethods: [POST]

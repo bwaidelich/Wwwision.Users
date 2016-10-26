@@ -1,0 +1,44 @@
+{namespace u=Wwwision\Users\Application\ViewHelpers}
+<f:layout name="Default"/>
+
+<f:section name="Content">
+    <h1>User "{user.name}"</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <u:security.canRenameUser userId="{user.id}">
+                <p><a href="#" class="userRenameLink" data-toggle="modal" data-target="#userRenameModal" title="Sign-up user"><i class="fa fa-pencil"></i> Rename</a></p>
+            </u:security.canRenameUser>
+            <p><f:link.action action="index" controller="User" title="Cancel"><i class="fa fa-angle-double-left"></i> Back</f:link.action></p>
+        </div>
+    </div>
+
+    <div class="modal{f:validation.ifHasErrors(then: ' errors')}" id="userRenameModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <f:form action="rename" arguments="{user: user.id}" class="form-horizontal" objectName="command">
+                    <f:form.hidden property="userId" value="{user.id}" />
+                    <f:form.hidden property="expectedVersion" value="{user.version}" />
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Rename User "{user.name}"</h4>
+                    </div>
+                    <div class="modal-body">
+                        <f:render partial="ValidationResults"/>
+                        <div class="form-group">
+                            <label for="userRenameForm-newName" class="col-sm-3 control-label">New Name</label>
+                            <div class="col-sm-6">
+                                <f:form.textfield id="userRenameForm-newName" property="newName" value="{user.name}" class="form-control" errorClass="alert-danger" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-pencil"></i> Rename user</button>
+                    </div>
+                </f:form>
+            </div>
+        </div>
+    </div>
+
+</f:section>

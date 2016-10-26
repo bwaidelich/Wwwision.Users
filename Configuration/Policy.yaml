@@ -1,0 +1,16 @@
+privilegeTargets:
+
+  TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+
+    'Wwwision.Users:renameForeignUser':
+      matcher: 'method(Wwwision\Users\Domain\Aggregate\User\User->rename()) && evaluate(current.accountService.authenticatedAccountId !== this.username)'
+
+roles:
+  'Wwwision.Users:User':
+    privileges: []
+
+  'Wwwision.Users:Administrator':
+    privileges:
+      -
+        privilegeTarget: 'Wwwision.Users:renameForeignUser'
+        permission: GRANT

@@ -1,0 +1,15 @@
+TYPO3:
+  Flow:
+    aop:
+      globalObjects:
+        accountService: 'Wwwision\Users\Domain\Service\AccountService'
+
+    mvc:
+      routes:
+        'Wwwision.Users': true
+
+    security:
+      authentication:
+        providers:
+          'DefaultProvider':
+            provider: 'PersistedUsernamePasswordProvider'

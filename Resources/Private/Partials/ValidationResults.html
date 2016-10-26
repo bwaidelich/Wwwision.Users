@@ -1,0 +1,14 @@
+<f:validation.results>
+    <f:if condition="{validationResults.flattenedErrors}">
+        <div class="alert alert-danger">
+            <f:for each="{validationResults.flattenedErrors}" as="errors" key="propertyPath">
+                <h4 class="alert-heading">{propertyPath}</h4>
+                <ul>
+                    <f:for each="{errors}" as="error">
+                        <li>{error}</li>
+                    </f:for>
+                </ul>
+            </f:for>
+        </div>
+    </f:if>
+</f:validation.results>

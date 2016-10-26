@@ -1,0 +1,17 @@
+-
+  name: 'login'
+  uriPattern: 'login'
+
+-
+  name: 'authenticate'
+  uriPattern: 'authenticate'
+  defaults:
+    '@action': 'authenticate'
+  httpMethods: [POST]
+
+-
+  name: 'logout'
+  uriPattern: 'logout'
+  defaults:
+    '@action': 'logout'
+  httpMethods: [POST]
