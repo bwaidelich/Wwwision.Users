@@ -27,7 +27,7 @@ With a simple [AOP Aspect](Classes/Application/Service/CommandLoggerAspect.php) 
 
 ### CLI interaction
 
-A [CommandController](Classes/Application/Command/UserCommandController.php) deminstrates interaction with aggregates from CLI
+A [CommandController](Classes/Application/Command/UserCommandController.php) demonstrates interaction with aggregates from CLI
 
 ### Policy with runtime evaluations
 
