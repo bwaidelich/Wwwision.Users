@@ -6,10 +6,7 @@ use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Security\Cryptography\HashService;
 use TYPO3\Flow\Utility\Algorithms;
 
-/**
- * TOOD I'd prefer this class to be final, but that's not possible atm (see https://github.com/neos/flow-development-collection/issues/496)
- */
-class SignUpUser implements CommandInterface
+final class SignUpUser implements CommandInterface
 {
     /**
      * @Flow\Validate(type="NotEmpty")
@@ -25,6 +22,7 @@ class SignUpUser implements CommandInterface
 
     /**
      * @Flow\Validate(type="NotEmpty")
+     * @Flow\Validate(type="Wwwision\Users\Domain\Validation\UniqueUsernameValidator")
      * @var string
      */
     private $username;

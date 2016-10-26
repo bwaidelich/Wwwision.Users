@@ -14,7 +14,7 @@ use TYPO3\Flow\Security\Policy\PolicyService;
  *
  * @internal This service is meant to be used by this package exclusively
  */
-class AccountService
+final class AccountService
 {
     /**
      * @Flow\Inject
@@ -83,6 +83,15 @@ class AccountService
             throw new \InvalidArgumentException(sprintf('An account with the identifier "%s" does not exist!', $identifier), 1477230407);
         }
         return $account;
+    }
+
+    public function hasAccount(string $identifier): bool
+    {
+        $account = null;
+        $this->securityContext->withoutAuthorizationChecks(function () use ($identifier, &$account) {
+            $account = $this->accountRepository->findByAccountIdentifierAndAuthenticationProviderName($identifier, self::AUTHENTICATION_PROVIDER_NAME);
+        });
+        return $account !== null;
     }
 
     public function updatePassword(Account $account, string $hashedPassword)
