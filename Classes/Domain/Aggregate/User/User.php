@@ -31,9 +31,9 @@ final class User extends AbstractEventSourcedAggregateRoot
      */
     protected $admin = false;
 
-    static public function signUp(string $identifier, string $name, string $username, string $hashedPassword) : User
+    static public function signUp(string $identifier, string $name, string $username, string $hashedPassword): self
     {
-        $user = new User($identifier);
+        $user = new static($identifier);
         $user->accountService->createAccount($username, $hashedPassword);
 
         $user->recordThat(new UserHasSignedUp($identifier, $name, $username, $hashedPassword));
