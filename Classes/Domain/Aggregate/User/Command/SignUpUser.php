@@ -1,12 +1,11 @@
 <?php
 namespace Wwwision\Users\Domain\Aggregate\User\Command;
 
-use Neos\Cqrs\Command\CommandInterface;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\Security\Cryptography\HashService;
 use TYPO3\Flow\Utility\Algorithms;
 
-final class SignUpUser implements CommandInterface
+final class SignUpUser
 {
     /**
      * @Flow\Validate(type="NotEmpty")

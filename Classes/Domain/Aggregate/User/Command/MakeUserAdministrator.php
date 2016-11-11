@@ -1,9 +1,7 @@
 <?php
 namespace Wwwision\Users\Domain\Aggregate\User\Command;
 
-use Neos\Cqrs\Command\CommandInterface;
-
-final class MakeUserAdministrator implements CommandInterface
+final class MakeUserAdministrator
 {
     /**
      * @var string

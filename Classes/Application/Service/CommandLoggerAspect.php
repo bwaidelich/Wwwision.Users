@@ -22,11 +22,11 @@ class CommandLoggerAspect
     /**
      * Logs all calls to CommandHandlerInterface::handle*() to the SystemLogger
      *
-     * @Flow\Before("within(Neos\Cqrs\Command\CommandHandlerInterface) && method(.*->handle.*())")
+     * @Flow\Before("method(Wwwision\Users\Application\Command\UserCommandHandler->handle.*())")
+     * @param JoinPointInterface $joinPoint
      */
     public function beforeCommandHandling(JoinPointInterface $joinPoint)
     {
-        /** @var CommandInterface $command */
         $arguments = array_values($joinPoint->getMethodArguments());
         $command = array_shift($arguments);
         $this->systemLogger->log('Handling command "' . TypeHandling::getTypeForValue($command) . '"', LOG_INFO, ['command' => $command]);

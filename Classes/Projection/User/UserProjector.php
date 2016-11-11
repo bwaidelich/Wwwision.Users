@@ -1,7 +1,7 @@
 <?php
 namespace Wwwision\Users\Projection\User;
 
-use Neos\Cqrs\Event\EventMetadata;
+use Neos\Cqrs\EventStore\RawEvent;
 use Neos\Cqrs\Projection\Doctrine\AbstractDoctrineProjector;
 use TYPO3\Flow\Annotations as Flow;
 use Wwwision\Users\Domain\Aggregate\User\Event\UserHasSignedUp;
@@ -23,15 +23,15 @@ class UserProjector extends AbstractDoctrineProjector
         $this->add($user);
     }
 
-    public function whenUserWasRenamed(UserWasRenamed $event, EventMetadata $metadata)
+    public function whenUserWasRenamed(UserWasRenamed $event, RawEvent $storedEvent)
     {
         $user = $this->get($event->getUserIdentifier());
         $user->_setName($event->getNewName());
-        $user->_setVersion($metadata->getProperty(EventMetadata::VERSION));
+        $user->_setVersion($storedEvent->getVersion());
         $this->update($user);
     }
 
-    public function get(string $userIdentifier): User
+    public function get($userIdentifier): User
     {
         /** @var User $user */
         $user = parent::get($userIdentifier);

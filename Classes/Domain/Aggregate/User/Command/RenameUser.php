@@ -1,9 +1,7 @@
 <?php
 namespace Wwwision\Users\Domain\Aggregate\User\Command;
 
-use Neos\Cqrs\Command\CommandInterface;
-
-final class RenameUser implements CommandInterface
+final class RenameUser
 {
     /**
      * @var string
