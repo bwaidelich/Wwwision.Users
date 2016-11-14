@@ -8,6 +8,9 @@ use Wwwision\Users\Domain\Aggregate\User\Event\UserHasSignedUp;
 use Wwwision\Users\Domain\Aggregate\User\Event\UserWasRenamed;
 use Wwwision\Users\Domain\Service\AccountService;
 
+/**
+ * @method User get($identifier)
+ */
 class UserProjector extends AbstractDoctrineProjector
 {
     /**
@@ -23,18 +26,11 @@ class UserProjector extends AbstractDoctrineProjector
         $this->add($user);
     }
 
-    public function whenUserWasRenamed(UserWasRenamed $event, RawEvent $storedEvent)
+    public function whenUserWasRenamed(UserWasRenamed $event, RawEvent $rawEvent)
     {
         $user = $this->get($event->getUserIdentifier());
         $user->_setName($event->getNewName());
-        $user->_setVersion($storedEvent->getVersion());
+        $user->_setVersion($rawEvent->getVersion());
         $this->update($user);
-    }
-
-    public function get($userIdentifier): User
-    {
-        /** @var User $user */
-        $user = parent::get($userIdentifier);
-        return $user;
     }
 }

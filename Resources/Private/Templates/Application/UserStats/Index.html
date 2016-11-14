@@ -1,0 +1,19 @@
+<f:layout name="Default"/>
+
+<f:section name="Content">
+    <h1>Users</h1>
+
+    <div class="row">
+        <div class="col-md-4">
+            <ul>
+                <f:for each="{userStats}" as="stats">
+                    <li>
+                        {stats.timestamp -> f:format.date(format: 'd.m.Y - H:i:s')} - {stats.name}
+                    </li>
+                </f:for>
+            </ul>
+            <p><f:link.action action="index" controller="User" title="Cancel"><i class="fa fa-angle-double-left"></i> Back</f:link.action></p>
+        </div>
+    </div>
+
+</f:section>

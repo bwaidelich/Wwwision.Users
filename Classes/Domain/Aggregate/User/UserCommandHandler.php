@@ -26,8 +26,7 @@ final class UserCommandHandler
 
     public function handleRenameUser(RenameUser $command)
     {
-        /** @var User $user */
-        $user = $this->userRepository->findByIdentifier($command->getUserId());
+        $user = $this->userRepository->get($command->getUserId());
         $user->rename($command->getNewName());
         $this->userRepository->save($user, $command->getExpectedVersion());
     }
@@ -35,7 +34,7 @@ final class UserCommandHandler
     public function handleMakeUserAdministrator(MakeUserAdministrator $command)
     {
         /** @var User $user */
-        $user = $this->userRepository->findByIdentifier($command->getUserId());
+        $user = $this->userRepository->get($command->getUserId());
         $user->makeAdministrator();
         $this->userRepository->save($user, ExpectedVersion::ANY);
     }

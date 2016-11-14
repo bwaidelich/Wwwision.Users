@@ -6,6 +6,8 @@ use TYPO3\Flow\Annotations as Flow;
 
 /**
  * @Flow\Scope("singleton")
+ *
+ * @method User get(string $identifier)
  */
 final class UserRepository extends AbstractEventSourcedRepository
 {
