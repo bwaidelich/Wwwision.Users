@@ -30,7 +30,7 @@ class CanRenameUserViewHelper extends AbstractConditionViewHelper
      */
     public function render($userId)
     {
-        $user = $this->userRepository->findByIdentifier($userId);
+        $user = $this->userRepository->get($userId);
         $mockJoinPoint = new JoinPoint($user, User::class, 'rename', []);
         $subject = new MethodPrivilegeSubject($mockJoinPoint);
         if ($this->privilegeManager->isGranted(MethodPrivilegeInterface::class, $subject)) {

@@ -1,14 +1,13 @@
 <?php
 namespace Wwwision\Users\Projection\UserStats;
 
-use Neos\Cqrs\EventListener\AsynchronousEventListenerInterface;
 use Neos\Cqrs\EventStore\RawEvent;
-use Neos\Cqrs\Projection\Doctrine\AbstractDoctrineProjector;
+use Neos\Cqrs\Projection\Doctrine\AbstractAsynchronousDoctrineProjector;
 use TYPO3\Flow\Annotations as Flow;
 use Wwwision\Users\Domain\Aggregate\User\Event\UserHasSignedUp;
 use Wwwision\Users\Domain\Service\AccountService;
 
-class UserStatsProjector extends AbstractDoctrineProjector implements AsynchronousEventListenerInterface
+class UserStatsProjector extends AbstractAsynchronousDoctrineProjector
 {
     /**
      * @Flow\Inject

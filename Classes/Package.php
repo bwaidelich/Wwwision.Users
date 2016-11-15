@@ -12,7 +12,7 @@ class Package extends BasePackage
     public function boot(Bootstrap $bootstrap)
     {
         $dispatcher = $bootstrap->getSignalSlotDispatcher();
-        $dispatcher->connect(EventPublisher::class, 'beforePublishingEvent', function(EventInterface $event, array &$metadata) use ($bootstrap) {
+        $dispatcher->connect(EventPublisher::class, 'beforePublishingEvent', function(EventInterface $_, array &$metadata) use ($bootstrap) {
             $requestHandler = $bootstrap->getActiveRequestHandler();
             if (!$requestHandler instanceof HttpRequestHandlerInterface) {
                 return;

@@ -1,7 +1,6 @@
 <?php
 namespace Wwwision\Users\Application\Service;
 
-use Neos\Cqrs\Command\CommandInterface;
 use TYPO3\Flow\Annotations as Flow;
 use TYPO3\Flow\AOP\JoinPointInterface;
 use TYPO3\Flow\Log\SystemLoggerInterface;
