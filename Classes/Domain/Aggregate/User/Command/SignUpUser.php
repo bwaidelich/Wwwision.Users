@@ -1,9 +1,9 @@
 <?php
 namespace Wwwision\Users\Domain\Aggregate\User\Command;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Security\Cryptography\HashService;
-use TYPO3\Flow\Utility\Algorithms;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Security\Cryptography\HashService;
+use Neos\Flow\Utility\Algorithms;
 
 final class SignUpUser
 {

@@ -2,9 +2,9 @@
 namespace Wwwision\Users\Application\Controller;
 
 use Neos\Cqrs\EventStore\Exception\ConcurrencyException;
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Error\Message;
-use TYPO3\Flow\Mvc\Controller\ActionController;
+use Neos\Flow\Annotations as Flow;
+use Neos\Error\Messages\Message;
+use Neos\Flow\Mvc\Controller\ActionController;
 use Wwwision\Users\Domain\Aggregate\User\Command\RenameUser;
 use Wwwision\Users\Domain\Aggregate\User\Command\SignUpUser;
 use Wwwision\Users\Domain\Aggregate\User\UserCommandHandler;

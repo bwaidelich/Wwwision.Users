@@ -2,7 +2,7 @@
 namespace Wwwision\Users\Domain\Aggregate\User;
 
 use Neos\Cqrs\Domain\AbstractEventSourcedAggregateRoot;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use Wwwision\Users\Domain\Aggregate\User\Event\UserHasSignedUp;
 use Wwwision\Users\Domain\Aggregate\User\Event\UserWasMadeAdministrator;
 use Wwwision\Users\Domain\Aggregate\User\Event\UserWasRenamed;

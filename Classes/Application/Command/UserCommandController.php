@@ -1,8 +1,8 @@
 <?php
 namespace Wwwision\Users\Application\Command;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Cli\CommandController;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Cli\CommandController;
 use Wwwision\Users\Domain\Aggregate\User\Command\MakeUserAdministrator;
 use Wwwision\Users\Domain\Aggregate\User\UserCommandHandler;
 

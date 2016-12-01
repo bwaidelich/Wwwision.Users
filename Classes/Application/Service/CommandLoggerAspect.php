@@ -1,10 +1,10 @@
 <?php
 namespace Wwwision\Users\Application\Service;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\AOP\JoinPointInterface;
-use TYPO3\Flow\Log\SystemLoggerInterface;
-use TYPO3\Flow\Utility\TypeHandling;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Aop\JoinPointInterface;
+use Neos\Flow\Log\SystemLoggerInterface;
+use Neos\Utility\TypeHandling;
 
 /**
  * @Flow\Aspect

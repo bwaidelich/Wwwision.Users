@@ -3,9 +3,9 @@ namespace Wwwision\Users;
 
 use Neos\Cqrs\Event\EventInterface;
 use Neos\Cqrs\Event\EventPublisher;
-use TYPO3\Flow\Core\Bootstrap;
-use TYPO3\Flow\Http\HttpRequestHandlerInterface;
-use TYPO3\Flow\Package\Package as BasePackage;
+use Neos\Flow\Core\Bootstrap;
+use Neos\Flow\Http\HttpRequestHandlerInterface;
+use Neos\Flow\Package\Package as BasePackage;
 
 class Package extends BasePackage
 {

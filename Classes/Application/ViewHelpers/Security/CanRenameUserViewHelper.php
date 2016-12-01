@@ -1,12 +1,12 @@
 <?php
 namespace Wwwision\Users\Application\ViewHelpers\Security;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Aop\JoinPoint;
-use TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilegeInterface;
-use TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilegeSubject;
-use TYPO3\Flow\Security\Authorization\PrivilegeManagerInterface;
-use TYPO3\Fluid\Core\ViewHelper\AbstractConditionViewHelper;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Aop\JoinPoint;
+use Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilegeInterface;
+use Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilegeSubject;
+use Neos\Flow\Security\Authorization\PrivilegeManagerInterface;
+use Neos\FluidAdaptor\Core\ViewHelper\AbstractConditionViewHelper;
 use Wwwision\Users\Domain\Aggregate\User\User;
 use Wwwision\Users\Domain\Aggregate\User\UserRepository;
 

@@ -2,7 +2,7 @@
 namespace Wwwision\Users\Domain\Aggregate\User;
 
 use Neos\Cqrs\EventStore\ExpectedVersion;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 use Wwwision\Users\Domain\Aggregate\User\Command\MakeUserAdministrator;
 use Wwwision\Users\Domain\Aggregate\User\Command\RenameUser;
 use Wwwision\Users\Domain\Aggregate\User\Command\SignUpUser;

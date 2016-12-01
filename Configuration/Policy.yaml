@@ -1,6 +1,6 @@
 privilegeTargets:
 
-  TYPO3\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+  Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
 
     'Wwwision.Users:renameForeignUser':
       matcher: 'method(Wwwision\Users\Domain\Aggregate\User\User->rename()) && evaluate(current.accountService.authenticatedAccountId !== this.username)'

@@ -1,15 +1,14 @@
-TYPO3:
+
+Neos:
   Flow:
     aop:
       globalObjects:
-        accountService: 'Wwwision\Users\Domain\Service\AccountService'
-
+        accountService: Wwwision\Users\Domain\Service\AccountService
     mvc:
       routes:
-        'Wwwision.Users': true
-
+        Wwwision.Users: true
     security:
       authentication:
         providers:
-          'DefaultProvider':
-            provider: 'PersistedUsernamePasswordProvider'
+          DefaultProvider:
+            provider: PersistedUsernamePasswordProvider

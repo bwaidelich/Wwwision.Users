@@ -1,8 +1,8 @@
 <?php
 namespace Wwwision\Users\Domain\Validation;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Flow\Validation\Validator\AbstractValidator;
+use Neos\Flow\Annotations as Flow;
+use Neos\Flow\Validation\Validator\AbstractValidator;
 use Wwwision\Users\Domain\Service\AccountService;
 
 class UniqueUsernameValidator extends AbstractValidator
